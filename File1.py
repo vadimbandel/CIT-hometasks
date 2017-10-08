@@ -23,12 +23,3 @@ while amount < 1000:
 # print results
 print(res)
 # print(len(res))
-
-'''
-git init
-git add file_name
-git commit -m "messs"
-git commit -am "messs"
-git status
-git --all
-'''
