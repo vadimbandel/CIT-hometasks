@@ -1,25 +1,18 @@
-import math
-
-
 def get_prime_numbers(n):
-    numbers = []
-    result = []
-    for i in range(n):
-        numbers.append(True)
-
-    for p in range(2, int(math.sqrt(n))):
-        if not numbers[p]:
-            continue
-        i = 2
-        while i * p < n:
-            numbers[i * p] = False
-            i = i + 1
-
-    for i in range(2, n):
-        if numbers[i]:
-            result.append(i)
-
-    return result
+    prime_numbers = [2]
+    current_num = 3
+    while len(prime_numbers) < n:
+        divider = 3
+        flag = True
+        while divider < current_num:
+            if current_num % divider == 0:
+                flag = False
+                break
+            divider = divider + 1
+        if flag:
+            prime_numbers.append(current_num)
+        current_num = current_num + 2
+    return prime_numbers
 
 
 print(get_prime_numbers(100))
